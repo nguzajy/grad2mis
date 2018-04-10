@@ -1,0 +1,35 @@
+<link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.5/css/jquery.dataTables.min.css">
+<script src="http://code.jquery.com/jquery-2.1.2.min.js"></script>
+<script src="http://cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+         $(document).ready(function() {
+             $("table").DataTable();
+         } );
+</script>
+---
+
+GRAD2MIS Report
+------
+Report generated on `r format(Sys.time(),usetz=T)`.
+
+#### **VESA Savings Amount per Household for the Last Quarter**
+
+```{r echo=FALSE, eval=TRUE, message=FALSE,}
+source('saving.R')
+```
+
+
+```{r echo=FALSE, results='asis'}
+knitr::kable(savingAmount)
+```
+\newline 
+ .
+ .
+\newline
+
+#### **VESA Loans Amount per Household for the Last Quarter**
+
+```{r echo=FALSE, results='asis'}
+knitr::kable(loanAmount)
+```
